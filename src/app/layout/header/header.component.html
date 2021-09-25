@@ -1,1 +1,36 @@
-<p>header works!</p>
+<header class="d-flex flex-column flex-shrink-0 bg-dark header">
+    <a routerLink="/dashboard" class="d-block p-3 pb-5 link-ligth text-decoration-none text-center" title="Medicmas"
+        data-bs-toggle="tooltip" data-bs-placement="right">
+        <i class="fas fa-tablets"></i>
+        <span class="visually-hidden">Medicmas</span>
+    </a>
+    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+        <li class="nav-item">
+            <a class="nav-link py-3 border-bottom" routerLinkActive="active" routerLink="/dashboard" aria-current="page"
+                title="Home" data-bs-toggle="tooltip" data-bs-placement="right">
+                <i class="fas fa-tachometer-alt"></i>
+            </a>
+        </li>
+        <li>
+            <a class="nav-link py-3 border-bottom" title="Dashboard" routerLink="/medicamento" routerLinkActive="active"
+                data-bs-toggle="tooltip" data-bs-placement="right">
+                <i class="fas fa-pills"></i>
+            </a>
+        </li>
+    </ul>
+    <div class="dropdown border-top">
+        <a href="#"
+            class="d-flex align-items-center justify-content-center p-3 link-ligth text-decoration-none dropdown-toggle"
+            id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" class="rounded-circle">
+        </a>
+        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
+            <li><a class="dropdown-item" href="#">Perfil</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+        </ul>
+    </div>
+
+</header>

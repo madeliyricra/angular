@@ -1,1 +1,39 @@
-<p>medicamento works!</p>
+<div class="ps-5 row medicamento">
+    <form id="formulario" class="col row" (submit)="registarMedicamento()">
+        <div class="titulo mt-5 mb-3 text-center col-12">
+            <h3>Registro de medicamento</h3>
+        </div>
+        <div class="col-6">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" name="nombre"
+                    [(ngModel)]="medicamento.nombre" placeholder="name@example.com">
+                <label for="floatingInput">Nombre</label>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-floating">
+                <input type="number" class="form-control" name="precio" [(ngModel)]="medicamento.precio"
+                    id="floatingInput" placeholder="Password">
+                <label for="floatingInput">Precio</label>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-floating">
+                <input type="number" class="form-control" name="stock" [(ngModel)]="medicamento.stock"
+                    id="floatingInput" placeholder="Password">
+                <label for="floatingInput">Stock</label>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="laboratorio" [(ngModel)]="medicamento.laboratorio"
+                    id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Laboratorio</label>
+            </div>
+        </div>
+        <div class="col-12 text-end">
+            <button type="submit" class="btn btn-info">Aregar medicamento</button>
+        </div>
+    </form>
+    <div class="col"></div>
+</div>

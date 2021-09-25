@@ -1,0 +1,17 @@
+.header {
+  width: 70px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+.active {
+  background-color: rgb(30, 165, 206) !important;
+}
+.nav-link.active {
+  color: #fff !important;
+}
+.nav-link,
+a {
+  color: rgb(30, 165, 206) !important;
+}
