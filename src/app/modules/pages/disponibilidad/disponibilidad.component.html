@@ -1,0 +1,56 @@
+<div class="ps-5 row disponibilidads">
+    <form id="formulario" class="col row" (submit)="registrarDisponibilidad()">
+        <div class="titulo mt-5 mb-3 text-center col-12">
+            <h3>Registro de disponibilidad</h3>
+        </div>
+        <div class="col-4">
+            <div class="form-floating mb-3">
+                <input type="time" class="form-control" id="floatingInput" name="horaInicio"
+                    [(ngModel)]="disponibilidad.horaInicio">
+                <label for="floatingInput">Hora inicio</label>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-floating">
+                <input type="time" class="form-control" name="horaFin" [(ngModel)]="disponibilidad.horaFin"
+                    id="floatingInput">
+                <label for="floatingInput">Hora fin</label>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-floating">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="dia"
+                    [(ngModel)]="disponibilidad.dia">
+                    <option selected disabled value="-1">Dia</option>
+                    <option *ngFor="let d of diaSelect" value={{d}}>{{d}}</option>
+                </select>
+                <label for="floatingSelect">Selecciona dia</label>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-floating">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
+                    [(ngModel)]="disponibilidad.ciclo!.idCiclo" name="ciclo">
+                    <option selected disabled value="-1">Ciclo</option>
+                    <option *ngFor="let c of ciclo" value={{c.idCiclo}}>{{c.nombre}}</option>
+                </select>
+                <label for="floatingSelect">Selecciona ciclo</label>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-floating">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
+                    name="usuario" [(ngModel)]="disponibilidad.usuario!.idUsuario">
+                    <option selected disabled value="-1">Usuario</option>
+                    <option *ngFor="let u of usuario" value={{u.idUsuario}}>{{u.nombres+" "+u.apaterno+" "+u.amaterno}}
+                    </option>
+                </select>
+                <label for="floatingSelect">Selecciona usuario</label>
+            </div>
+        </div>
+        <div class="col-12 text-end mt-3">
+            <button type="submit" class="btn btn-info">Aregar medicamento</button>
+        </div>
+    </form>
+    <div class="col"></div>
+</div>

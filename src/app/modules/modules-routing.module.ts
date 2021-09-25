@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { MedicamentoComponent } from './pages/medicamento/medicamento.component';
-
+import { DisponibilidadComponent } from './pages/disponibilidad/disponibilidad.component';
 const routes: Routes = [
   {
-    path: 'medicamento',
+    path: 'disponibilidad',
     pathMatch: 'full',
-    component: MedicamentoComponent,
+    component: DisponibilidadComponent,
   },
   {
     path: 'dashboard',
