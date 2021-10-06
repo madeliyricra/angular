@@ -13,36 +13,18 @@ export class DocenteComponent implements OnInit {
   nombre: String = '';
 
   constructor(private docenteService: DocenteService) {
-    this.listaDocente();
+    this.docenteService
+      .listaDocenteFiltro(this.nombre, this.dni)
+      .subscribe((docente) => (this.docentes = docente));
   }
 
   ngOnInit(): void {}
 
   listaDocente() {
     this.docenteService
-      .listaDocente()
+      .listaDocenteFiltro(this.nombre, this.dni)
       .subscribe((docente) => (this.docentes = docente));
-  }
-  filtrarDocente() {
-    if (this.dni && this.nombre) {
-      this.docenteService
-        .listaDocentePorNombreAndDni(this.nombre, this.dni)
-        .subscribe((docente) => (this.docentes = docente));
-    } else {
-      if (this.dni) {
-        this.docenteService
-          .listaDocentePorDni(this.dni)
-          .subscribe((docente) => (this.docentes = docente));
-      } else if (this.nombre) {
-        this.docenteService
-          .listaDocentePorNombre(this.nombre)
-          .subscribe((docente) => (this.docentes = docente));
-      } else {
-        this.listaDocente();
-        alert('Ingresa datos');
-      }
-    }
-    let form: any = document.getElementById('docente');
-    form.reset();
+    this.dni = '';
+    this.nombre = '';
   }
 }
