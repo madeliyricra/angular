@@ -1,0 +1,85 @@
+<div class="docente">
+    <div class="container-fluid">
+        <div class="row mb-3 pt-5">
+            <div class="col-12">
+                <h3> Filtro de docente</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form action="" class="docente__formulario" id="docente" (submit)="filtrarDocente()">
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" id="floatingInput" name="dni"
+                                    [(ngModel)]="dni">
+                                <label for="floatingInput">DNI</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" name="nombre"
+                                    [(ngModel)]="nombre">
+                                <label for="floatingInput">Nombre</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mt-1 me-4 text-end">
+                            <button class="btn btn-primary" type="submit">Buscar docente</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col row">
+                <div class="col-6">
+                    <div class="card mb-3">
+                        <div class="card-header">Docente</div>
+                        <div class="card-body row">
+                            <div class="col">Total</div>
+                            <div class="col">{{docentes.length}} docentes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mt-5">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">DNI</th>
+                            <th scope="col">Ubigeo</th>
+                            <th scope="col">Distrito</th>
+                            <th scope="col">Provincia</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngIf="docentes.length>0; then data; else sinData">
+                        </ng-container>
+                        <ng-template #data>
+                            <tr *ngFor="let docente of docentes">
+                                <th scope="row">{{docente.idDocente}}</th>
+                                <td>{{docente.nombre}}</td>
+                                <td>{{docente.dni}}</td>
+                                <td>{{docente.ubigeo.idUbigeo}}</td>
+                                <td>{{docente.ubigeo.distrito}}</td>
+                                <td>{{docente.ubigeo.provincia}}</td>
+                                <td><i class="fas fa-pen"></i></td>
+                                <td><i class="fas fa-trash"></i></td>
+                            </tr>
+                        </ng-template>
+                        <ng-template #sinData>
+                            <tr>
+                                <td colspan="6">No se ha encontrado registros</td>
+                            </tr>
+                        </ng-template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
