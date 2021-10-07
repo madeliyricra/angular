@@ -9,9 +9,6 @@ import { URL_DOCENTE } from '../constants/global';
 export class DocenteService {
   constructor(private http: HttpClient) {}
 
-  // listaDocente(): Observable<string[]> {
-  //   return this.http.get<string[]>(URL_DOCENTE);
-  // }
   // listaDocentePorNombre(nombre: String): Observable<string[]> {
   //   return this.http.get<string[]>(URL_DOCENTE + '/filtro?nombre=' + nombre);
   // }
@@ -22,5 +19,8 @@ export class DocenteService {
     return this.http.get<string[]>(
       URL_DOCENTE + '/filtro?nombre=' + nombre + '&dni=' + dni
     );
+  }
+  listaDocente(): Observable<string[]> {
+    return this.http.get<string[]>(URL_DOCENTE);
   }
 }

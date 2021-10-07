@@ -13,18 +13,22 @@ export class DocenteComponent implements OnInit {
   nombre: String = '';
 
   constructor(private docenteService: DocenteService) {
-    this.docenteService
-      .listaDocenteFiltro(this.nombre, this.dni)
-      .subscribe((docente) => (this.docentes = docente));
+    this.listaDocente();
   }
 
   ngOnInit(): void {}
 
-  listaDocente() {
+  listaDocenteFiltro() {
     this.docenteService
       .listaDocenteFiltro(this.nombre, this.dni)
       .subscribe((docente) => (this.docentes = docente));
     this.dni = '';
     this.nombre = '';
+  }
+
+  listaDocente() {
+    this.docenteService
+      .listaDocente()
+      .subscribe((docente) => (this.docentes = docente));
   }
 }
